@@ -134,7 +134,7 @@ html, body {
     margin-left: 8px;
 }
 
-.searchresult h2 {
+#search-h2 {
     font-size: 20px;
     line-height: 2-px;
     font-weight: normal;
@@ -143,14 +143,14 @@ html, body {
     margin-top: 25px;
 }
 
-.searchresult a {
+#search-a{
     font-size: 14px;
     line-height: 14px;
     color: green;
     margin-bottom: 0px;
 }
 
-.searchresult button {
+#search-button{
     font-size: 10px;
     line-height: 14px;
     color: green;
@@ -197,7 +197,7 @@ html, body {
     z-index: -1;
 }
 
-.searchresult p {
+#search-p {
     font-size: 13px;
     margin-top: 0px;
     color: rgb(82, 82, 82);
@@ -236,3 +236,4 @@ html, body {
     position: relative;
     top: -5px;
 }
+
