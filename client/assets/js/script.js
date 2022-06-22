@@ -35,7 +35,7 @@ function appendSearchResults(searchData){
     newLi3.textContent = item.bodyText
 
     ul.append(newLi1, newLi2, newLi3) // adds the list items to the UL list
-    mainDiv.append(ul) // adds the UL to the main div
+    // mainDiv.append(ul) // adds the UL to the main div
     console.log(ul)
    
     searchContainer.append(ul) // adds the div (containing the UL which contains Li's to the 'search container' in the HTML)
@@ -44,32 +44,3 @@ function appendSearchResults(searchData){
 
             
 }
-// function appendTourDates(tourDateData){
-//     //clear displayed search results before making the new list
-//     clearSearchHistory(".search-results-list")
-//     //iterate through each tour date
-  
-//         tourDateData.forEach((date)=> { 
-//           console.log(date, 'qqqqq')
-    
-//           const finalList =document.querySelector('.search-results-list')
-//           const dateList = createElementWithClass('button',`${date.id}`)
-     
-//           const newLi1 = document.createElement('li');
-//           const newLi2 = document.createElement('li')
-//           const newLi3 = document.createElement('li');
-//           const newLi4 = document.createElement('li');
-//           const newLi5 = document.createElement('li');
-  
-//           newLi1.textContent = `Date: ${date.date} `
-//           newLi1.style.backgroundColor = '#f05d23'
-//           newLi2.textContent = `City: ${date.city} `
-//           newLi3.textContent = `Venue: ${date.venue}`
-//           newLi4.textContent = `Capacity: ${date.cap}`
-//           newLi5.textContent = `Unique ID: ${date.id}`
-  
-          
-//           dateList.append(newLi1, newLi2, newLi3, newLi4, newLi5); 
-//           finalList.append(dateList)
-//           }) 
-//   };
