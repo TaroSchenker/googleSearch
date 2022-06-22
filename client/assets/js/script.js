@@ -20,7 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
         .then( data => data.json())
         .then(appendSearchResults)
         .catch(console.warn) 
+    }
     
+    //////
     //  function makefetchRequest(e) {
     //     e.preventDefault();
     //     console.log(e)
@@ -85,5 +87,4 @@ document.addEventListener('DOMContentLoaded', () => {
     function fixCase(str){
         console.log('fixcase',  str)
         return str.toLowerCase()
-
     }
