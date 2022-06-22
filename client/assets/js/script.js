@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const searchButton = document.querySelector('#searchButton')
+    const searchButton = document.querySelector('#searchbarbutton')
     const searchByForm = document.querySelector('#search-form');
-    console.log('search by form',searchByForm.target.value)
+    // console.log('search by form',searchByForm.target.value)
     // const searchForm = document.querySelector()
     console.log(searchButton)
-    searchButton.addEventListener('click', loadNextPage)
+    searchButton.addEventListener('click', searchForQuery)
     searchByForm.addEventListener('submit',searchForQuery)
     
     })
@@ -35,13 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     
     function appendSearchResults(searchData){
-        clearSearchHistory('#search-container')
+        clearSearchHistory('#searchresultsarea')
         //forEach loops over each item in search array. Each item will be referred to as 'item' in the arrray, i.e item.url will get that items url.
         searchData.forEach( item => {
         //set the div from HTML to attach reults to
-        const searchContainer = document.querySelector('#search-container')
-        //creates a div to attach list (UL) to
-        const mainDiv = document.createElement('div')
+        const searchContainer = document.querySelector('#searchresultsarea')
         //create UL list to attach list items to (LI)
         const ul = document.createElement('ul')
         //add the class of 'search item for each search item. this means we can format them as a search result
@@ -54,10 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
         newLi1.textContent = item.url
         newLi2.textContent = item.heading
         newLi3.textContent = item.bodyText
+
+        newLi1.setAttribute('id','search-a' )
+        newLi2.setAttribute('id','search-h2' )
+        newLi3.setAttribute('id','search-p' )
     
         ul.append(newLi1, newLi2, newLi3) // adds the list items to the UL list
         // mainDiv.append(ul) // adds the UL to the main div
-        // console.log(ul)
+        console.log(ul)
         searchContainer.append(ul) // adds the div (containing the UL which contains Li's to the 'search container' in the HTML)
         })
     
