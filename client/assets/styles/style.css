@@ -18,6 +18,7 @@ body {
 	display: block;
 	margin: 0px auto;
 	margin-top: 350px;
+	position:fixed;
 	bottom:0
 }
 .s-box {
