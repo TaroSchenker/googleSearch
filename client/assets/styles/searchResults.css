@@ -1,5 +1,4 @@
 body {
-	margin-left: 40px;
     min-height: 100%;
     position: relative;
 }
@@ -122,6 +121,7 @@ html, body {
 }
 
 #searchresultsarea {
+	margin-left: 60px;
     font-family: 'Arial';
 }
 
