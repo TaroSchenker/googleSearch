@@ -1,9 +1,25 @@
-const express = require('express')  
-const PORT  = 3000
+const express = require('express')
 const app = express()
+const cors = require('cors');
+const searchResultData = require('./searchResults')
 
-app.get('/', (req, res) => {
-    res.send('he)llo world')
-})
+const PORT = 3000;
+app.use(cors());
 
-app.use(PORT, () => console.log('listening on port ' + PORT))
+// const quoteRoutes = require('./controllers/quotes')
+// app.use('/quotes', quoteRoutes)
+
+ app.get('/search/', (req, res) => {
+res.send(searchResultData)
+ })
+
+ app.get('/search/:searchedItem', (req, res) => {
+    const searchedItem = req.params.searchedItem
+    if(searchedItem === 'dog adoption'){
+        res.status(200).send(searchResultData)
+    } else {
+        res.status(404).send({"error": "search not found, please search for dog adoption"})
+    }
+     })
+
+app.listen(PORT, () => console.log('listening on port ' + PORT ))
