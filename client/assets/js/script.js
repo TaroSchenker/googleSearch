@@ -1,33 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchButton = document.querySelector('#searchbarbutton')
     const searchByForm = document.querySelector('#search-form');
-    // console.log('search by form',searchByForm.target.value)
+    //  console.log('search by form',searchByForm)
+
     // const searchForm = document.querySelector()
-    console.log(searchButton)
-    searchButton.addEventListener('click', searchForQuery)
+    // console.log(searchButton)
+    searchButton.addEventListener('click', loadNextPage)
     searchByForm.addEventListener('submit',searchForQuery)
     
     })
     
     function searchForQuery(e) {
         e.preventDefault();
-        console.log(e)
-        console.log('makefetchRequest....')
-        fetch('http://localhost:3000/search/')
+        // console.log('search query',e.target[0].value)
+        const searchQuery = e.target[0].value
+        const searchInLowerCase = fixCase(searchQuery)
+        console.log('search query request....')
+        fetch(`http://localhost:3000/search/${searchInLowerCase}`)
         .then( data => data.json())
         .then(appendSearchResults)
         .catch(console.warn)
     }
     
-     function makefetchRequest(e) {
-        e.preventDefault();
-        console.log(e)
-        console.log('makefetchRequest....')
-        fetch('http://localhost:3000/search/')
-        .then( data => data.json())
-        .then(appendSearchResults)
-        .catch(console.warn)
-    }
+    //  function makefetchRequest(e) {
+    //     e.preventDefault();
+    //     console.log(e)
+    //     console.log('makefetchRequest....')
+    //     fetch('http://localhost:3000/search/')
+    //     .then( data => data.json())
+    //     .then(appendSearchResults)
+    //     .catch(console.warn)
+    // }
     
     function loadNextPage(){
         console.log('load next page once the button is pressed')
@@ -45,19 +48,25 @@ document.addEventListener('DOMContentLoaded', () => {
         //add the class of 'search item for each search item. this means we can format them as a search result
         ul.classList.add('searchItem');
         //create the LI items which we will attach each data item (ur, header, body) to
-        const newLi1 = document.createElement('li')
+        const newLi1 = document.createElement('a')
         const newLi2 = document.createElement('li')
         const newLi3 = document.createElement('li') 
+        const linkHref = document.createElement('a')
         //inset the data item i
         newLi1.textContent = item.url
         newLi2.textContent = item.heading
         newLi3.textContent = item.bodyText
+        linkHref.href =`${item.url}`
 
         newLi1.setAttribute('id','search-a' )
+        newLi1.href =`${item.url}`
         newLi2.setAttribute('id','search-h2' )
         newLi3.setAttribute('id','search-p' )
-    
-        ul.append(newLi1, newLi2, newLi3) // adds the list items to the UL list
+
+        linkHref.appendChild(newLi2)
+        // newLi2.appendChild(linkHref)
+        console.log(newLi2)
+        ul.append(newLi1, linkHref, newLi3) // adds the list items to the UL list
         // mainDiv.append(ul) // adds the UL to the main div
         console.log(ul)
         searchContainer.append(ul) // adds the div (containing the UL which contains Li's to the 'search container' in the HTML)
@@ -73,3 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
           }
     }
     
+
+    function fixCase(str){
+        console.log('fixcase',  str)
+        return str.toLowerCase()
+
+    }
