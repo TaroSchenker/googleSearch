@@ -50,8 +50,10 @@ nav button {
 .section-1 .logo {
 	display: block;
 	margin: 0px auto;
+
 	margin-top: 300px;
 	position: relative;
+
 	bottom:0
 }
 .s-box {

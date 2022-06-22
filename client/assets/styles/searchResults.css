@@ -19,7 +19,7 @@ body {
 }
 
 html, body {
-    margin: 0;
+    margin-left: 20px;
     padding: 0;
     height: auto;
 }
@@ -121,7 +121,7 @@ html, body {
 }
 
 #searchresultsarea {
-    margin-left: 150px;
+	margin-left: 0px;
     font-family: 'Arial';
 }
 
@@ -203,10 +203,13 @@ html, body {
     color: rgb(82, 82, 82);
 }
 
+ul{
+	list-style-type: none;
+}
 
 #footer {
     background-color: rgb(238, 238, 238);
-    position: relative;
+    position: fixed;
     left: 0px;
     bottom: 0px;
     width: 100%;
