@@ -19,18 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(`http://localhost:3000/search/${searchInLowerCase}`)
         .then( data => data.json())
         .then(appendSearchResults)
-        .catch(console.warn)
-    }
+        .catch(console.warn) 
     
-     function makefetchRequest(e) {
-        e.preventDefault();
-        console.log(e)
-        console.log('makefetchRequest....')
-        fetch('http://localhost:3000/search/')
-        .then( data => data.json())
-        .then(appendSearchResults)
-        .catch(console.warn)
-    }
+    //  function makefetchRequest(e) {
+    //     e.preventDefault();
+    //     console.log(e)
+    //     console.log('makefetchRequest....')
+    //     fetch('http://localhost:3000/search/')
+    //     .then( data => data.json())
+    //     .then(appendSearchResults)
+    //     .catch(console.warn)
+    // }
     
     function loadNextPage(){
         console.log('load next page once the button is pressed')
