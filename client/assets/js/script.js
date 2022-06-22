@@ -19,8 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(`http://localhost:3000/search/${searchInLowerCase}`)
         .then( data => data.json())
         .then(appendSearchResults)
-        .catch(console.warn)
-    }
+        .catch(console.warn) 
     
     //  function makefetchRequest(e) {
     //     e.preventDefault();
