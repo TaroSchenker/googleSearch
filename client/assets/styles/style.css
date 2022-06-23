@@ -9,6 +9,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	/* filter:invert(1) hue-rotate(180deg);
+	background-color: #282c2d; */
 }
 nav {
 	display: flex;
@@ -105,6 +107,9 @@ nav button {
 	border: 1px solid #aaa;
 }
 
+.name-center{
+	text-align: center
+}
 footer {
 	background: #f2f2f2;
 }
@@ -117,8 +122,6 @@ footer h4 {
 	border: 1px solid #eee;
 }
 footer a {
-	position: fixed;
-	bottom:0;
 	color: #5f6368;
 	display: inline-block;
 	padding: 12px 11.3px;
@@ -127,7 +130,14 @@ footer a {
 footer a:hover {
 	text-decoration: underline;
 }
-
-
-
-
+.rows {
+	border-top: 1px solid #ddd;
+	display: flex;
+}
+.row-1 {
+	padding-left: 18.7px;
+	flex: 1;
+}
+.row-2 {
+	padding-right: 18.7px;
+}
