@@ -15,11 +15,27 @@
 	</header>
       <section class="section-1">
       	<img src="../assets/img/logo.png" class="logo">
-      	<form><br><br>
-      		<div class="s-box">
-      			<input type="text" class="s-input">
-      			<input type="submit" class="s-btn" value="Google Search">
-      			<input type="submit" class="s-btn" value="I'm Feeling Lucky">
+      	<form action="/client/static/searchResults.html" method="GET"> <br><br>
+      		<div class="s-box" >
+      			<input 
+				type="text" 
+				name="q"
+				id="q"
+				class="s-input"
+				/>
+      			<input
+				 type="submit" 
+				 name="homePageSearchText" 
+				 class="s-btn" 
+				 id="homePageSearchText"
+				 value="Google Search"
+				 />
+      			<input 
+				type="submit" 
+				class="s-btn" 
+				value="I'm Feeling Lucky"
+				id="homePageSearchText"
+				/>
       		</div>
       	</form>
       </section>
