@@ -241,3 +241,19 @@ ul{
     top: -5px;
 }
 
+#errorImage{
+position: relative;
+height: 50vh;
+width: auto;
+
+}
+
+#error-p{
+    font-size: 35px;
+
+}
+#imgDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
