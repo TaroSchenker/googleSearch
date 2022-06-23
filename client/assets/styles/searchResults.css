@@ -140,7 +140,7 @@ html, body {
     font-weight: normal;
     color: rgb(29, 1, 189);
     margin-bottom: 0px;
-    margin-top: 25px;
+    margin-top: 5px;
 }
 
 #search-a{
@@ -199,12 +199,13 @@ html, body {
 
 #search-p {
     font-size: 13px;
-    margin-top: 0px;
+    margin-top: 5px;
     color: rgb(82, 82, 82);
 }
 
 ul{
 	list-style-type: none;
+    margin-bottom: 25px
 }
 
 #footer {
