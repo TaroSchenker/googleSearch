@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchButton = document.querySelector('#searchbarbutton')
     const searchByForm = document.querySelector('#search-form');
+    const searchbarText = document.querySelector('#searchbartext')
     //  console.log('search by form',searchByForm)
 
     //  const homePageSearchForm = document.querySelector('#')
@@ -11,7 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
    console.log(urlInfo)
    const userSearchTerm = searchExtractor(urlInfo)
         if(userSearchTerm){
-        runHomePageSearch(userSearchTerm) 
+            console.log(userSearchTerm)
+            searchbarText.value = userSearchTerm;
+            console.log(searchbarText.value);
+            runHomePageSearch(userSearchTerm) 
         }
     })
     
