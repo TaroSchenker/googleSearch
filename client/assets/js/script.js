@@ -3,19 +3,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchByForm = document.querySelector('#search-form');
     //  console.log('search by form',searchByForm)
 
-    // const searchForm = document.querySelector()
+    //  const homePageSearchForm = document.querySelector('#')
     // console.log(searchButton)
-    searchButton.addEventListener('click', loadNextPage)
-    searchByForm.addEventListener('submit',searchForQuery)
-    
+    // searchButton.addEventListener('click', loadNextPage)
+    searchByForm.addEventListener('submit', searchForQuery)
+   const urlInfo = document.forms[0].baseURI
+   console.log(urlInfo)
+   const userSearchTerm = searchExtractor(urlInfo)
+        if(userSearchTerm){
+        runHomePageSearch(userSearchTerm) 
+        }
     })
     
+
+    function searchExtractor(url){
+    const indexOfSearchStart = url.indexOf('q=')
+    const indexOfSearchEnd =  url.indexOf('&')
+    const withPlus = url.slice(indexOfSearchStart+2, indexOfSearchEnd)
+    const withouPlus = withPlus.split("+").join(" ")
+    console.log(withouPlus);
+    return withouPlus
+    }
+
+    function runHomePageSearch(search) {
+
+        const searchQuery = search
+        console.log('run hom epage search request....', searchQuery)
+        fetch(`http://localhost:3000/search/${searchQuery}`)
+        .then( data => data.json())
+        .then(appendSearchResults)
+        .catch(console.warn) 
+    }
     function searchForQuery(e) {
         e.preventDefault();
         // console.log('search query',e.target[0].value)
         const searchQuery = e.target[0].value
         const searchInLowerCase = fixCase(searchQuery)
-        console.log('search query request....')
+        console.log('search query request....', searchInLowerCase)
         fetch(`http://localhost:3000/search/${searchInLowerCase}`)
         .then( data => data.json())
         .then(appendSearchResults)
