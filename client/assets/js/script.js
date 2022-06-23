@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
    console.log(urlInfo)
    const userSearchTerm = searchExtractor(urlInfo)
         if(userSearchTerm){
+            console.log(userSearchTerm)
             searchbarText.value = userSearchTerm;
             console.log(searchbarText.value);
             runHomePageSearch(userSearchTerm) 
