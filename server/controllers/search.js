@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const searchResultData = require('../searchResults');
-
+const searchResultData = require('../data/searchResults');
+const errorArray = require('../data/errorArray')
 
 router.get('/', (req, res) => {
     res.send(searchResultData)
@@ -13,7 +13,7 @@ router.get('/:searchedItem', (req, res) => {
         if(searchedItem === 'dog adoption'){
             res.status(200).send(searchResultData)
         } else {
-            res.status(404).send({"error": "search not found, please search for dog adoption"})
+            res.status(404).send(errorArray)
         }
          })
 
